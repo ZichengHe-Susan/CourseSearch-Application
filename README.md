@@ -3,6 +3,7 @@ CourseSearch Application
 ## To Run
 
 [Java file to run: CourseReviewsApplication.java]
+
 [vm argument: --module-path (PATH_TO_JAVAFX_LIB_FOLDER) --add-modules javafx.controls,javafx.fxml ]
 
 ## Application Description
