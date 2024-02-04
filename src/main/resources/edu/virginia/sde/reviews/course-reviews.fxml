@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.virginia.sde.reviews.CourseReviewsController">
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <top>
+      <VBox prefHeight="145.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="27.0" prefWidth="600.0">
+               <children>
+                  <Region layoutX="1234.0" layoutY="10.0" prefHeight="70.0" prefWidth="56.0" HBox.hgrow="NEVER" />
+                  <Button mnemonicParsing="false" onAction="#handleBackButton" prefHeight="25.0" prefWidth="214.0" text="Back to Course Search Page" HBox.hgrow="NEVER">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="4.0" left="15.0" right="15.0" top="4.0" />
+                     </padding>
+                  </Button>
+                  <Label fx:id="courseName" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="832.0" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Region prefHeight="70.0" prefWidth="216.0" HBox.hgrow="NEVER" />
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="600.0">
+               <children>
+                  <Region prefHeight="200.0" prefWidth="50.0" />
+                  <Label text="Average Rating: " HBox.hgrow="SOMETIMES">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Region prefHeight="200.0" prefWidth="50.0" />
+                  <Label fx:id="averageReview" layoutX="610.0" layoutY="15.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Region prefHeight="200.0" prefWidth="50.0" />
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView fx:id="tableView" prefHeight="425.0" prefWidth="1002.0" BorderPane.alignment="CENTER">
+         <columns>
+            <TableColumn prefWidth="140.0" text="Rating">
+               <cellValueFactory><PropertyValueFactory property="rating" />
+               </cellValueFactory></TableColumn>
+            <TableColumn prefWidth="545.0" text="Comment">
+               <cellValueFactory><PropertyValueFactory property="comment" />
+               </cellValueFactory></TableColumn>
+            <TableColumn minWidth="0.0" prefWidth="194.0" text="Date"><cellValueFactory><PropertyValueFactory property="timestamp" /></cellValueFactory></TableColumn>
+         </columns>
+      </TableView>
+   </center>
+   <left>
+      <Region prefHeight="200.0" prefWidth="50.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <VBox alignment="CENTER" prefHeight="425.0" prefWidth="349.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" text="Review this Course">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="93.0" layoutY="80.0" text="Give your ratings here" />
+            <Region layoutX="10.0" layoutY="162.0" prefHeight="12.0" prefWidth="349.0" />
+            <ChoiceBox fx:id="ratingChoice" prefWidth="150.0" />
+            <Region layoutX="10.0" layoutY="338.0" prefHeight="32.0" prefWidth="344.0" />
+            <TextField fx:id="reviewComment" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="168.0" prefWidth="293.0" promptText="Your comment here (optional)" />
+            <Region prefHeight="20.0" prefWidth="349.0" />
+            <HBox alignment="CENTER" prefHeight="46.0" prefWidth="349.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleAddButton" prefWidth="60.0" text="Add" />
+                  <Region prefHeight="43.0" prefWidth="45.0" />
+                  <Button layoutX="209.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleEditButton" prefWidth="60.0" text="Edit" />
+               </children>
+            </HBox>
+            <Region layoutX="10.0" layoutY="361.0" prefHeight="20.0" prefWidth="349.0" />
+            <Button mnemonicParsing="false" onAction="#handleDeleteButton" prefWidth="60.0" text="Delete" />
+            <Label fx:id="errorMessage" textFill="RED" />
+            <Region layoutX="10.0" layoutY="389.0" prefHeight="20.0" prefWidth="349.0" />
+         </children></VBox>
+   </right>
+   <bottom>
+      <Region prefHeight="75.0" prefWidth="1280.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

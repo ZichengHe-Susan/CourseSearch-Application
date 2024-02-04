@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.virginia.sde.reviews.CourseSearchController">
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <top>
+      <VBox prefHeight="145.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+              <HBox alignment="CENTER" prefHeight="27.0" prefWidth="600.0">
+                  <children>
+                  <Region layoutX="1234.0" layoutY="10.0" prefHeight="200.0" prefWidth="120.0" HBox.hgrow="NEVER" />
+                      <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Search for Courses" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#handleLogoutButton" text="Log Out" HBox.hgrow="NEVER">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="4.0" left="15.0" right="15.0" top="4.0" />
+                     </padding>
+                  </Button>
+                   <Region prefHeight="200.0" prefWidth="56.0" HBox.hgrow="NEVER" />
+                  </children>
+              </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="600.0">
+               <children>
+                  <Region prefHeight="200.0" prefWidth="50.0" />
+                  <TextField fx:id="subjectSearch" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="180.0" promptText="Subject Mnemonic" />
+                   <Region prefHeight="200.0" prefWidth="50.0" />
+                   <TextField fx:id="numberSearch" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="180.0" promptText="Course Number" />
+                   <Region prefHeight="200.0" prefWidth="50.0" />
+                   <TextField fx:id="titleSearch" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="580.0" promptText="Course Title" />
+                   <Region prefHeight="200.0" prefWidth="50.0" />
+                   <Button mnemonicParsing="false" onAction="#handleSearchButton" prefHeight="26.0" text="Search">
+                     <padding>
+                        <Insets bottom="4.0" left="20.0" right="20.0" top="4.0" />
+                     </padding></Button>
+                  <Region prefHeight="200.0" prefWidth="50.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+    <center>
+    <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn prefWidth="140.0" text="Subject">
+                <cellValueFactory><PropertyValueFactory property="Subject" />
+                </cellValueFactory></TableColumn>
+            <TableColumn prefWidth="140.0" text="Course Number">
+                <cellValueFactory><PropertyValueFactory property="courseNumber" />
+                </cellValueFactory></TableColumn>
+            <TableColumn minWidth="0.0" prefWidth="700.0" text="Course Title"><cellValueFactory><PropertyValueFactory property="courseTitle" /></cellValueFactory></TableColumn>
+            <TableColumn minWidth="-Infinity" prefWidth="198.0" text="Average Review">
+                <cellValueFactory><PropertyValueFactory property="averageReview" /></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    </center>
+   <left>
+      <Region prefHeight="200.0" prefWidth="50.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Region prefHeight="200.0" prefWidth="50.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="1051.0">
+               <children>
+                  <Label alignment="TOP_CENTER" contentDisplay="CENTER" text="Add a Course">
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="subjectToAdd" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="180.0" promptText="Subject Mnemonic" />
+                        <Region prefHeight="200.0" prefWidth="50.0" />
+                        <TextField fx:id="numberToAdd" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="180.0" promptText="Course Number" />
+                        <Region prefHeight="200.0" prefWidth="50.0" />
+                        <TextField fx:id="titleToAdd" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="400.0" promptText="Course Title" />
+                        <Region prefHeight="200.0" prefWidth="50.0" />
+                        <Button mnemonicParsing="false" onAction="#handleAddButton" prefHeight="26.0" text="Add Course">
+                           <padding>
+                              <Insets bottom="4.0" left="10.0" right="10.0" top="4.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </HBox>
+                   <Label fx:id="errorMessage" textFill="RED">
+                     <VBox.margin>
+                        <Insets bottom="22.0" />
+                     </VBox.margin></Label>
+               </children>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="150.0" prefWidth="1.0" />
+            <Region prefHeight="150.0" prefWidth="41.0" />
+            <Button mnemonicParsing="false" onAction="#handleMyReviewsButton" text="My Reviews">
+               <HBox.margin>
+                  <Insets top="12.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

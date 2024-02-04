@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.virginia.sde.reviews.MyReviewsController">
+   <top>
+       <HBox alignment="CENTER" prefHeight="133.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+           <Button mnemonicParsing="false" onAction="#handleBackButton" prefHeight="26.0" prefWidth="185.0" text="Back to Course Search Page" />
+           <Label alignment="CENTER" prefHeight="28.0" prefWidth="983.0" text="My Reviews                                 " textAlignment="CENTER" HBox.hgrow="ALWAYS">
+            <font>
+               <Font size="25.0" />
+            </font></Label>
+       </HBox>
+   </top>
+   <center>
+       <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+           <columns>
+               <TableColumn prefWidth="140.0" text="Subject">
+                   <cellValueFactory><PropertyValueFactory property="Subject" />
+                   </cellValueFactory></TableColumn>
+               <TableColumn prefWidth="140.0" text="Course Number">
+                   <cellValueFactory><PropertyValueFactory property="courseNumber" />
+                   </cellValueFactory></TableColumn>
+               <TableColumn minWidth="0.0" prefWidth="505.0" text="Course Title"><cellValueFactory><PropertyValueFactory property="courseTitle" /></cellValueFactory></TableColumn>
+               <TableColumn minWidth="-Infinity" prefWidth="194.0" text="Rating">
+                   <cellValueFactory><PropertyValueFactory property="rating" /></cellValueFactory>
+               </TableColumn>
+           </columns>
+       </TableView>
+   </center>
+   <left>
+      <Region prefHeight="200.0" prefWidth="150.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Region prefHeight="200.0" prefWidth="150.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <Region prefHeight="83.0" prefWidth="1280.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

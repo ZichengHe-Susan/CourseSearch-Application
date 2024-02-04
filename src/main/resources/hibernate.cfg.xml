@@ -1,0 +1,21 @@
+<hibernate-configuration>
+    <session-factory>
+        <property name="show_sql">false</property>
+        <property name="format_sql">false</property>
+
+        <property name="dialect">org.hibernate.community.dialect.SQLiteDialect</property>
+
+        <!-- The driver class used for the database -->
+        <property name="connection.driver_class">org.sqlite.JDBC</property>
+
+        <!-- The database connection URL-->
+        <property name="connection.url">jdbc:sqlite:CourseReviews.sqlite3</property>
+
+        <property name="hibernate.hbm2ddl.auto" >update</property>
+
+        <!-- The list of classes that are Entity objects which we want to connect to the database -->
+        <mapping class="edu.virginia.sde.reviews.User" />
+        <mapping class="edu.virginia.sde.reviews.Course" />
+        <mapping class="edu.virginia.sde.reviews.Review" />
+    </session-factory>
+</hibernate-configuration>
